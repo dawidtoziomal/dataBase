@@ -14,6 +14,13 @@ ini_set('display_errors', 1);
         if(isset($_POST['del'])){
             echo "USUWANIE REKORDU " . $_POST['del'];
             
+            $delsql = "DELETE FROM users WHERE id=10";
+            
+            if(mysqli_query($con,$delsql)){
+                echo "RECORD DELETED";
+            } else {
+                echo "DELETE ERROR";
+            };
         }
 
         //ADD RECORDS
